@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0e2642 0%, #142f52 50%, #0b2340 100%);
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+
+.login-container, .register-container, .imovel-container {
+    width: 30%;
+    margin: 100px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+:root {
+    --acir-blue-800: #0b2340;
+    --acir-blue-700: #0e2642;
+    --acir-blue-600: #16385f;
+    --acir-blue-500: #1e4a7f;
+    --acir-blue-400: #2a5c9c;
+}
+
+.bg-acir {
+    background: linear-gradient(135deg, var(--acir-blue-800), var(--acir-blue-600));
+}
+
+.brand-bar {
+    background: linear-gradient(135deg, var(--acir-blue-700), var(--acir-blue-500));
+    color: #fff;
+}
+
+.brand-heading {
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.brand-subtitle {
+    font-size: 0.6em;
+    margin-left: 0.25em;
+    color: rgba(255,255,255,0.85);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.nav-link, .navbar-brand {
+    color: #ffffff !important;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.card-header {
+    background: var(--acir-blue-600);
+    color: #fff;
+}
+
+.card-header h2 {
+    font-size: 1.5rem; /* Reduced font size for card header H2 */
+    white-space: nowrap; /* Keep title on a single line */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    font-weight: bold;
+}
+
+.card-body, .card-footer {
+    color: #212529;
+}
+
+.card-body p, .card-body ul li, .card-body ol li {
+    font-size: 0.9rem; /* Reduced font size for body text and list items */
+    margin-bottom: 0.5rem; /* Adjust margin for smaller text */
+    line-height: 1.5; /* Increased line height for better readability */
+}
+
+.card-body h3 {
+    font-size: 1.1rem; /* Further reduced font size for card body H3 */
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.card-body h4 {
+    font-size: 0.95rem; /* Further reduced font size for card body H4 */
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.card-body ul, .card-body ol {
+    margin-bottom: 1rem; /* Space below lists */
+    padding-left: 1.5rem; /* Indent lists slightly */
+}
+
+.btn-primary {
+    background-color: var(--acir-blue-400);
+    border-color: var(--acir-blue-400);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--acir-blue-500);
+    border-color: var(--acir-blue-500);
+}
+
+footer {
+    background: linear-gradient(135deg, var(--acir-blue-800), var(--acir-blue-700));
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.table {
+    color: #212529;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
