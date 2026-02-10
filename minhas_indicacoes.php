@@ -1,14 +1,17 @@
 <?php
 session_start();
-if (!isset($_SESSION['id'])) {
-    header("Location: index.php");
+if (!isset($_SESSION['id']) || (($_SESSION['eh_captador'] ?? 0) == 1 && $_SESSION['nivel'] != 'Administrador')) {
+    header("Location: home.php");
     exit();
 }
 include 'header.php';
 include 'php/db.php';
 
 $id_usuario = $_SESSION['id'];
-$sql = "SELECT * FROM imoveis WHERE id_usuario = ?";
+$sql = "SELECT i.*, u.nome as nome_captador 
+        FROM imoveis i 
+        LEFT JOIN usuarios u ON i.id_captador = u.id 
+        WHERE i.id_usuario = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_usuario);
 $stmt->execute();
@@ -27,7 +30,10 @@ $result = $stmt->get_result();
             <th>Cliente</th>
             <th>Contato</th>
             <th>Endereço</th>
+            <th>Captador</th>
             <th>Status</th>
+            <th>Premiação</th>
+            <th>Observação</th>
             <th>Data</th>
         </tr>
     </thead>
@@ -38,7 +44,16 @@ $result = $stmt->get_result();
             <td><?php echo htmlspecialchars($row['nome_proprietario']); ?></td>
             <td><?php echo htmlspecialchars($row['contato_proprietario']); ?></td>
             <td><?php echo htmlspecialchars($row['endereco_imovel']); ?></td>
+            <td><?php echo htmlspecialchars($row['nome_captador'] ?? 'Aguardando'); ?></td>
             <td><?php echo htmlspecialchars($row['status']); ?></td>
+            <td>
+                <?php if($row['premiacao_paga']): ?>
+                    <span class="badge bg-success">Paga</span>
+                <?php else: ?>
+                    <span class="badge bg-warning text-dark">Pendente</span>
+                <?php endif; ?>
+            </td>
+            <td><?php echo nl2br(htmlspecialchars($row['observacao'] ?? '')); ?></td>
             <td><?php echo date('d/m/Y', strtotime($row['data_indicacao'])); ?></td>
         </tr>
         <?php endwhile; ?>

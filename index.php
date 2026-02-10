@@ -3,6 +3,8 @@ session_start();
 if (isset($_SESSION['id'])) {
     if ($_SESSION['nivel'] == 'Administrador') {
         header("Location: admin.php");
+    } elseif ($_SESSION['nivel'] == 'Captador') {
+        header("Location: captador.php");
     } else {
         header("Location: home.php");
     }
@@ -77,7 +79,8 @@ include 'header.php';
                     <li>Andaraí</li>
                 </ul>
                 <h4>Niterói</h4>
-                <p>Para indicações em outros bairros, será realizada uma análise prévia do imóvel para verificar a possibilidade de atendimento.</p>
+                <h4>Além dos locais citados acima, para condomínios também serão aceitas indicações para Duque de Caxias e Nova Iguaçu</h4>
+                <p>Para indicações em outros bairros, será realizada uma análise prévia do imóvel/condomínio para verificar a possibilidade de atendimento.</p>
                 <h3>Premiação</h3>
                 <h4>Prazo de pagamento</h4>
                 <p>A premiação será paga no mês seguinte à locação ou venda do imóvel indicado.</p>
@@ -85,6 +88,7 @@ include 'header.php';
                 <ul>
                     <li>Locação: 10% do valor do aluguel indicado</li>
                     <li>Venda: 2% do valor da corretagem da Acir</li>
+                    <li>Condomínios: 50% do valor da primeira Taxa de Administração</li>
                 </ul>
             </div>
         </div>

@@ -52,10 +52,12 @@ $usuario = $result->fetch_assoc();
                     <div class="mb-3">
                         <label for="nivel" class="form-label">Nível</label>
                         <select class="form-select" id="nivel" name="nivel" required>
-                            <option value="Usuario" <?php echo ($usuario['nivel'] == 'Usuario') ? 'selected' : ''; ?>>Usuário</option>
+                            <option value="Usuario" <?php echo ($usuario['nivel'] == 'Usuario') ? 'selected' : ''; ?>>Usuário (Indicador)</option>
+                            <option value="Captador" <?php echo ($usuario['nivel'] == 'Captador') ? 'selected' : ''; ?>>Captador</option>
                             <option value="Administrador" <?php echo ($usuario['nivel'] == 'Administrador') ? 'selected' : ''; ?>>Administrador</option>
                         </select>
                     </div>
+                    <!-- Checkbox removido -->
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </form>
             </div>

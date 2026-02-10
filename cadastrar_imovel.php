@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['id'])) {
-    header("Location: index.php");
+if (!isset($_SESSION['id']) || (($_SESSION['eh_captador'] ?? 0) == 1 && $_SESSION['nivel'] != 'Administrador')) {
+    header("Location: home.php");
     exit();
 }
 include 'header.php';

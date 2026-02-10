@@ -152,3 +152,40 @@ table, th, td {
 th {
     background-color: #f2f2f2;
 }
+
+.table-responsive .table th,
+.table-responsive .table td {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.admin-indicacoes-table th:nth-child(2),
+.admin-indicacoes-table td:nth-child(2) {
+    white-space: nowrap;
+    word-break: normal;
+}
+
+.admin-indicacoes-table th:nth-child(5),
+.admin-indicacoes-table td:nth-child(5) {
+    white-space: normal;
+    word-break: break-word;
+    width: 30%;
+}
+
+.admin-indicacoes-table th:nth-child(7),
+.admin-indicacoes-table td:nth-child(7) {
+    white-space: nowrap;
+    word-break: normal;
+}
+
+.admin-indicacoes-table th:nth-child(6),
+.admin-indicacoes-table td:nth-child(6) {
+    width: 14%;
+}
+
+.admin-indicacoes-table th:nth-child(8),
+.admin-indicacoes-table td:nth-child(8) {
+    white-space: nowrap;
+    word-break: normal;
+    width: 1%;
+}

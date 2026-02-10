@@ -1,0 +1,22 @@
+{
+  "name": "Acir Indicações",
+  "short_name": "AcirIndica",
+  "description": "Sistema de Indicação de Imóveis e Condomínios Acir Administradora",
+  "start_url": "index.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#004085",
+  "icons": [
+    {
+      "src": "imagens/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imagens/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -7,11 +7,13 @@ $departamento = $_POST['departamento'];
 $email = $_POST['email'];
 $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 $nivel = isset($_POST['nivel']) ? $_POST['nivel'] : 'Usuario';
+// Se o nível for Captador, seta a flag eh_captador automaticamente
+$eh_captador = ($nivel == 'Captador') ? 1 : 0;
 
-$sql = "INSERT INTO usuarios (nome, departamento, email, senha, nivel) VALUES (?, ?, ?, ?, ?)";
+$sql = "INSERT INTO usuarios (nome, departamento, email, senha, nivel, eh_captador) VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssss", $nome, $departamento, $email, $senha, $nivel);
+$stmt->bind_param("sssssi", $nome, $departamento, $email, $senha, $nivel, $eh_captador);
 
 if ($stmt->execute()) {
     if (isset($_SESSION['nivel']) && $_SESSION['nivel'] == 'Administrador') {

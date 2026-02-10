@@ -5,7 +5,7 @@ include 'db.php';
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$sql = "SELECT id, nome, email, senha, nivel FROM usuarios WHERE email = ?";
+$sql = "SELECT id, nome, email, senha, nivel, eh_captador FROM usuarios WHERE email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
 $stmt->execute();
@@ -17,8 +17,12 @@ if ($result->num_rows > 0) {
         $_SESSION['id'] = $user['id'];
         $_SESSION['nome'] = $user['nome'];
         $_SESSION['nivel'] = $user['nivel'];
+        // Removemos a dependência do eh_captador antigo, focando no Nível
+        
         if ($user['nivel'] == 'Administrador') {
             header("Location: ../admin.php");
+        } elseif ($user['nivel'] == 'Captador') {
+            header("Location: ../captador.php");
         } else {
             header("Location: ../home.php");
         }

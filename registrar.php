@@ -57,10 +57,12 @@ include 'header.php';
                         <div class="mb-3">
                             <label for="nivel" class="form-label">Nível</label>
                             <select class="form-select" id="nivel" name="nivel" required>
-                                <option value="Usuario">Usuário</option>
+                                <option value="Usuario">Usuário (Indicador)</option>
+                                <option value="Captador">Captador</option>
                                 <option value="Administrador">Administrador</option>
                             </select>
                         </div>
+                        <!-- Checkbox removido pois agora é um Nível -->
                     <?php else: ?>
                         <input type="hidden" name="nivel" value="Usuario">
                     <?php endif; ?>
