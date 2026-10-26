@@ -33,3 +33,13 @@ Este é um sistema simples de indicação de imóveis.
     *   Tem acesso a todas as indicações de todos os usuários.
     *   Pode alterar o status de cada indicação.
     *   Pode cadastrar novos usuários (tanto administradores quanto usuários comuns).
+
+---
+
+## Ambiente local neste servidor
+
+- PHP 8.x + MySQL; conexão em `php/db.php` (ajuste usuário/senha do seu MySQL)
+- Banco: `database.sql` para instalação nova; `database_updated.sql` é o estado
+  atual da base (usar este quando a estrutura sofreu migrations)
+- Primeiro usuário: criar pelo cadastro — novos usuários passam a ser criados apenas por administrador
+- **sincronização:** `cd /var/www && ./sync-github.sh indicacao_imoveis` (branch `main`)
